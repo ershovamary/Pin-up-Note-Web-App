@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}This is main page{% endblock %}
+
+{% block content %}
+  {{ super() }}
+  <div class="container">
+      <p> 
+	  <mark> List of users: </mark>
+	  </p>
+      <ul>
+      {% for user in users %}
+      <li> <mark> <a href={{url_for("notes", user_email=user.email)}}>{{user.email}}</a> </mark> </li>
+      {% else %}
+       <mark> No users :c </mark>
+      {% endfor %}
+      </ul>
+    </div>
+{% endblock %}
