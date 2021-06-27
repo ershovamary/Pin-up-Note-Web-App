@@ -24,7 +24,7 @@ class NoteForm(Form):
 app = Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL'] -- нужно для Хероку
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 SECURITY_PASSWORD_SALT = os.urandom(42)
 app.config['SECURITY_PASSWORD_SALT'] = SECURITY_PASSWORD_SALT
 app.config['SECURITY_REGISTERABLE'] = True
